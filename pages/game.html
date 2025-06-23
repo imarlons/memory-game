@@ -4,14 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/game.css">
     <title>Jogo da Memória</title>
 </head>
 
 <body>
-    <div class="grid">
-    </div>
+
+    <main>
+        <header>
+            <span class="left-block">
+                <a href="../index.html" class="home-btn">
+                    <i class="fas fa-home"></i>
+                </a>
+                <button class="reset-btn" onclick="resetGame()" title="Reiniciar Jogo">
+                    <i class="fas fa-rotate-right"></i>
+                </button>
+                <span class="player"></span></span>
+            <span>Tempo: <span class="timer">00</span></span>
+        </header>
+
+        <div class="grid"></div>
+    </main>
+
 </body>
 
 <script src="/js/game.js"></script>
