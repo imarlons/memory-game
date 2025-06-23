@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória | Home</title>
+
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/selection.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="welcome-message">Olá, <span id="playerName"></span>!</h1>
+
+        <h2>Escolha seu Tema:</h2>
+        <div class="theme-selection">
+            <div class="theme-card" data-theme="classic">
+                <h3>Patrulha Canina</h3>
+            </div>
+            <div class="theme-card" data-theme="animals">
+                <h3>Princesas</h3>
+            </div>
+            <div class="theme-card" data-theme="space">
+                <h3>Minecraft</h3>
+            </div>
+        </div>
+
+        <h2>Escolha o Nível:</h2>
+        <div class="level-selection">
+            <button class="level-button" data-level="easy">Fácil</button>
+            <button class="level-button" data-level="medium">Médio</button>
+            <button class="level-button" data-level="hard">Difícil</button>
+        </div>
+
+        <button class="start-game-button" disabled>Iniciar Jogo</button>
+
+    </div>
+
+    <script src="/js/selection.js"></script>
+</body>
+
+</html>

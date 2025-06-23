@@ -3,7 +3,7 @@ const button = document.querySelector('.login-button')
 const form = document.querySelector('.login-form')
 
 const validadeInput = ({ target }) => {
-    if (target.value.length > 1) {
+    if (target.value.length >= 3) {
         button.removeAttribute('disabled')
         return
     }
@@ -14,7 +14,7 @@ const handleSubmit = (event) => {
     event.preventDefault()
 
     localStorage.setItem('player', input.value)
-    window.location = 'pages/game.html'
+    window.location = 'pages/selection.html'
 }
 
 input.addEventListener('input', validadeInput)
