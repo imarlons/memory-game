@@ -7,6 +7,8 @@ const grid = document.querySelector('.grid');
 const spanPlayer = document.querySelector('.player');
 const timer = document.querySelector('.timer');
 const resetButton = document.querySelector('.reset-btn');
+const mainElement = document.querySelector('main');
+const headerElement = document.querySelector('header');
 
 let firstCard = '';
 let secondCard = '';
@@ -73,11 +75,12 @@ const revealCard = ({ target }) => {
     }
 };
 
-const createCard = (character, themePath) => {
+const createCard = (character, themePath, backCardImagePath) => {
     const card = createElement('div', 'card');
     const front = createElement('div', 'face front');
     const back = createElement('div', 'face back');
     front.style.backgroundImage = `url('${themePath}/${character}.png')`;
+    back.style.backgroundImage = `url('${backCardImagePath}')`;
     card.appendChild(front);
     card.appendChild(back);
     card.addEventListener('click', revealCard);
@@ -94,11 +97,17 @@ const loadGame = () => {
     const duplicateCharacters = [...charactersToUse, ...charactersToUse];
     const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
 
+    mainElement.style.backgroundImage = `url('${themeConfig.themeBackground}')`;
+    mainElement.style.backgroundSize = 'cover';
+    mainElement.style.backgroundPosition = 'center';
+
+    headerElement.style.backgroundColor = themeConfig.headerColor;
+
     grid.innerHTML = '';
     grid.style.gridTemplateColumns = `repeat(${levelConfig.columns}, 1fr)`;
 
     shuffledArray.forEach((character) => {
-        const card = createCard(character, themeConfig.imagePath);
+        const card = createCard(character, themeConfig.imagePath, themeConfig.backCardImage);
         grid.appendChild(card);
     });
 };
