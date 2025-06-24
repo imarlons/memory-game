@@ -36,7 +36,7 @@ const checkEndGame = () => {
     if (disabledCards.length === totalCardsInGame) {
         clearInterval(loop);
         setTimeout(() => {
-            alert(`PARABÉNS, ${spanPlayer.innerHTML}! Você completou o nível ${gameLevel} do tema ${gameTheme}! Tempo: ${timer.innerHTML} segundos!`);
+            alert(`PARABÉNS, ${spanPlayer.innerHTML}! VOCÊ CONSEGUIU! TEMPO: ${timer.innerHTML} segundos!`);
         }, 500);
     }
 };
