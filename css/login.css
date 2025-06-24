@@ -1,3 +1,7 @@
+body {
+    background-color: #333;
+}
+
 .login-form {
     align-items: center;
     display: flex;
@@ -21,14 +25,14 @@
 
 
 .login-header h1 {
-    color: #333;
+    color: #fff;
     font-size: 1.5em;
 }
 
 .login-input {
     border: 2px solid #333;
     border-radius: 8px;
-    color: #333;
+    color: black;
     font-size: 1em;
     margin-bottom: 15px;
     max-width: 300px;
@@ -38,9 +42,9 @@
 }
 
 .login-button {
-    background-color: red;
+    background-color: #28a745;
     border-radius: 8px;
-    color: black;
+    color: #fff;
     padding: 15px;
     max-width: 300px;
     font-size: 1em;
@@ -50,7 +54,7 @@
 }
 
 .login-button:disabled {
-    background-color: #eee;
-    color: #aaa;
+    background-color: red;
+    color: black;
     cursor: auto;
 }
