@@ -14,7 +14,7 @@ export const themeConfigs = {
         headerColor: '#FF69B4'
     },
     'minecraft': {
-        characters: ['creeper', 'ender', 'steve', 'alex', 'zombie', 'skeleton', 'pig', 'cow', 'spider', 'slime', 'ghast', 'blaze', 'witch', 'villager', 'iron-golem'],
+        characters: ['creeper', 'ender', 'steve', 'alex', 'zombie', 'skeleton', 'pig', 'cow', 'spider', 'slime', 'ghast', 'diamond', 'fox', 'villager', 'iron-golem'],
         imagePath: '../img/minecraft',
         themeBackground: '../img/minecraft/bg.png',
         backCardImage: '../img/minecraft/back-card.png',
