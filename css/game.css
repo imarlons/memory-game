@@ -1,13 +1,25 @@
+/* css/game.css */
+
+/* Removi os estilos do body daqui, já que você tem uma tag <main> que os agrupa.
+   Se seu body não tiver padding/margin zerados por um reset.css, considere adicioná-los. */
+
 main {
     display: flex;
     flex-direction: column;
     width: 100%;
+    /* O background-image do main é um bom toque para o tema do jogo,
+       mas lembre-se que ele é fixo aqui. Se quiser um background dinâmico por tema,
+       isso precisaria ser feito via JavaScript. Por enquanto, mantido. */
     background-image: url('../img/paw-patrol/bg.png');
     background-size: cover;
+    background-position: center;
+    /* Garante que a imagem de fundo se posicione bem */
     min-height: 100vh;
     align-items: center;
     justify-content: center;
     padding: 20px 20px 50px;
+    box-sizing: border-box;
+    /* Garante que padding não adicione largura extra */
 }
 
 header {
@@ -15,12 +27,21 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: rgba(1, 126, 243, 0.966);
+    /* Azul da Patrulha Canina, bom! */
     font-size: 1.2em;
     width: 100%;
     max-width: 800px;
+    /* Mantém a largura máxima alinhada com o grid */
     padding: 30px;
     margin: 0 0 30px;
+    /* Margem inferior para espaçar do grid */
     border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Adicionando sombra para profundidade */
+    color: #fff;
+    /* Cor do texto no header */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    /* Sombra para o texto */
 }
 
 .left-block {
@@ -29,68 +50,185 @@ header {
     gap: 30px;
 }
 
-.home-btn {
+.player {
+    font-weight: bold;
+    color: #f1c40f;
+    /* Cor de destaque para o nome do jogador */
+}
+
+.timer {
+    font-weight: bold;
+    color: #e74c3c;
+    /* Cor de destaque para o timer */
+}
+
+
+/* Ajustes nos botões de navegação/reset */
+.home-btn,
+.reset-btn {
     color: black;
     text-decoration: none;
     font-size: 26px;
     display: flex;
     align-items: center;
+    padding: 8px 12px;
+    /* Adiciona um pouco de padding para área de clique */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    /* Transição suave no hover */
+}
+
+.home-btn:hover,
+.reset-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Fundo leve no hover */
 }
 
 .reset-btn {
-    color: black;
     background: none;
-    text-decoration: none;
-    font-size: 26px;
-    display: flex;
-    align-items: center;
+    /* Garante que o botão de reset não tenha fundo padrão */
+    border: none;
+    /* Remove borda padrão do botão */
+    cursor: pointer;
+    /* Indica que é clicável */
 }
 
+
+/* --- Estilos do Grid do Jogo --- */
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: repeat(4, 1fr); <-- ESTA LINHA SERÁ REMOVIDA AQUI!
+       Ela será definida dinamicamente pelo JavaScript (game.js)
+       Ex: grid.style.gridTemplateColumns = `repeat(${levelConfig.columns}, 1fr)`; */
     gap: 15px;
     width: 100%;
     max-width: 800px;
+    /* Mantém a largura máxima do tabuleiro */
     margin: 0 auto;
+    perspective: 1000px;
+    /* Adiciona perspectiva para o efeito 3D das cartas */
+    /* Adicione um background opcional para o grid se desejar, para contrastar */
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    /* padding: 15px; */
+    /* border-radius: 8px; */
 }
 
+/* --- Estilos da Carta Individual --- */
 .card {
     width: 100%;
-    aspect-ratio: 3/4;
+    /* aspect-ratio: 3/4; <-- Você usou isto, é bom!
+       Se quiser que as cartas sejam quadradas (mais comum para memória), mude para 1/1 ou use padding-bottom: 100%;
+       Vou sugerir padding-bottom para compatibilidade e proporção quadrada, se desejar. */
+    padding-bottom: 100%;
+    /* Isso faz a carta ser quadrada, mantendo a proporção.
+                           Se quiser 3:4, mantenha seu 'aspect-ratio: 3/4;' e remova este padding-bottom. */
     border-radius: 5px;
     position: relative;
     transition: all 400ms ease;
     transform-style: preserve-3d;
     background-color: white;
+    /* Cor de fundo padrão da carta, visível antes de carregar faces */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Sombra para dar profundidade */
+    cursor: pointer;
+    /* Indica que é clicável */
 }
 
 .face {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-size: cover;
+    top: 0;
+    /* Garante que as faces cobrem 100% da carta */
+    left: 0;
+    /* Garante que as faces cobrem 100% da carta */
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     border: 5px solid gray;
+    /* Sua borda original, ok! */
     border-radius: 5px;
     transition: all 400ms ease;
+    backface-visibility: hidden;
+    /* Essencial para o efeito de virar */
 }
 
 .front {
     transform: rotateY(180deg);
+    /* A face da frente começa virada para trás */
+    background-color: #fff;
+    /* Fundo branco para as imagens, se a imagem for transparente */
 }
 
 .back {
     background-image: url(../img/paw-patrol/back-card.png);
-
-    backface-visibility: hidden;
+    background-size: cover;
+    /* Sua imagem padrão para o verso da carta */
+    /* backface-visibility: hidden; <-- Já está na classe .face, não precisa repetir aqui */
+    background-color: #3498db;
+    /* Um azul para o verso da carta, se a imagem for transparente */
+    border-color: #2980b9;
+    /* Cor da borda do verso */
 }
 
 .reveal-card {
     transform: rotateY(180deg);
+    /* Gira a carta para revelar a frente */
 }
 
-.disabled-card {
+/* Ajustado para a classe .disabled-card estar na div .face.front */
+.card .disabled-card {
     filter: saturate(0);
+    /* Preto e branco */
     opacity: 0.5;
+    /* Transparência */
+    pointer-events: none;
+    /* Impede novos cliques em cartas já combinadas */
+}
+
+/* --- Responsividade Básica --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        font-size: 1em;
+    }
+
+    .grid {
+        gap: 10px;
+        /* Diminui o espaçamento em telas menores */
+    }
+
+    .card,
+    .face {
+        border-radius: 4px;
+        border-width: 3px;
+        /* Bordas um pouco menores */
+    }
+
+    .home-btn,
+    .reset-btn {
+        font-size: 22px;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 10px 10px 30px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    .grid {
+        gap: 8px;
+    }
+
+    .home-btn,
+    .reset-btn {
+        font-size: 20px;
+    }
 }
