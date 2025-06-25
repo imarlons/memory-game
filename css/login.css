@@ -58,3 +58,23 @@ body {
     color: black;
     cursor: auto;
 }
+
+footer {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    z-index: 10;
+}
+
+.logo-container img {
+    height: 50px;
+}
