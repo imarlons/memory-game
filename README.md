@@ -3,7 +3,7 @@
 O **Memory Game** é uma aplicação web interativa desenvolvida para consolidar conhecimentos em manipulação do DOM e lógica de programação assíncrona com JavaScript. O projeto consiste em um clássico jogo de memória onde o usuário deve encontrar pares de cartas idênticas no menor tempo possível.
 
 > **Status do Projeto:** Concluído ✅  
-> **Link para Testar:** ([Memory Game](https://memory-game-black-five.vercel.app/]))
+> **Link para Testar:** ([Memory Game](https://memory-game-black-five.vercel.app))
 ---
 
 ## 🚀 Tecnologias
