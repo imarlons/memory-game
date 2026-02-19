@@ -1,27 +1,36 @@
-# Memory Game
-Um jogo de memória clássico desenvolvido para praticar a manipulação do DOM e lógica de programação com JavaScript Vanilla. Este projeto demonstra competências fundamentais de Frontend exigidas para o desenvolvimento de interfaces interativas.
+# 🧠 Memory Game
 
-## 🚀 Tecnologias Utilizadas
-HTML5: Estruturação semântica da aplicação.
+O **Memory Game** é uma aplicação web interativa desenvolvida para consolidar conhecimentos em manipulação do DOM e lógica de programação assíncrona com JavaScript. O projeto consiste em um clássico jogo de memória onde o usuário deve encontrar pares de cartas idênticas no menor tempo possível.
 
-CSS3: Estilização responsiva e animações de cartas (efeito de flip).
+> **Status do Projeto:** Concluído ✅  
+> **Link para Testar:** ([Memory Game](https://memory-game-black-five.vercel.app/]))
+---
 
-JavaScript (ES6+): Lógica do jogo, manipulação de eventos e controle de estado das cartas.
+## 🚀 Tecnologias
 
-🛠️ Funcionalidades
-Lógica de Match: Sistema que identifica se duas cartas selecionadas são iguais.
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
-Embaralhamento Dinâmico: As cartas mudam de posição a cada novo jogo (algoritmo de Fisher-Yates ou similar).
+* **HTML5:** Estrutura semântica dos elementos do jogo.
+* **CSS3:** Estilização, layout responsivo e animações de transição 3D (flip card).
+* **JavaScript (ES6+):** Lógica central, gerenciamento de estado e controle de eventos.
 
-Interface Responsiva: Adaptável para diferentes tamanhos de tela.
+---
 
-Efeitos Visuais: Animações suaves de rotação e feedback visual para acertos e erros.
+## 🛠️ Funcionalidades
 
-🏁 Como Rodar o Projeto
-Clone este repositório:
+O jogo conta com as seguintes mecânicas:
 
-Bash
-git clone https://github.com/imarlons/memory-game.git
-Navegue até a pasta do projeto.
+* **Embaralhamento (Shuffle):** Garante que as cartas estejam em posições aleatórias a cada nova partida.
+* **Lógica de Verificação:** Sistema que valida se os IDs ou classes das cartas selecionadas formam um par.
+* **Bloqueio de Interação:** Impede que o usuário selecione mais de duas cartas simultaneamente durante a animação de erro.
+* **Persistência de Estado:** Cartas encontradas permanecem viradas até o fim da rodada.
 
-Abra o arquivo index.html em seu navegador de preferência.
+---
+
+## 💻 Como executar o projeto
+
+Para rodar a aplicação localmente, siga os passos abaixo:
+
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/imarlons/memory-game.git](https://github.com/imarlons/memory-game.git)
