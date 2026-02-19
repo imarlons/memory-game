@@ -13,6 +13,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 * **HTML5:** Estrutura semântica dos elementos do jogo.
 * **CSS3:** Estilização, layout responsivo e animações de transição 3D (flip card).
 * **JavaScript (ES6+):** Lógica central, gerenciamento de estado e controle de eventos.
+**Vercel:** Plataforma utilizada para o Deploy e hospedagem da aplicação.
 
 ---
 
@@ -34,3 +35,10 @@ Para rodar a aplicação localmente, siga os passos abaixo:
 1. **Clone o repositório:**
    ```bash
    git clone [https://github.com/imarlons/memory-game.git](https://github.com/imarlons/memory-game.git)
+   ```
+2. **Acesse a pasta do projeto:**
+   ```bash
+   cd memory-game
+   ```
+3. **Abra o arquivo principal:**
+   Basta abrir o arquivo index.html em qualquer navegador moderno.
